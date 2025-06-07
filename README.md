@@ -1,20 +1,24 @@
 # 🚀 Cogn - Unified MCP Server
 
-**Advanced AI-powered development assistant with 20 specialized tools**
+**Advanced AI-powered development assistant with 21 specialized tools based on real MCP implementations.**
 
-Cogn is a production-ready Model Context Protocol (MCP) server built on Cloudflare Workers, designed to integrate seamlessly with Claude.ai and provide comprehensive development assistance through AI-powered tools.
+> **Status**: ✅ All 21 tools implemented and ready for testing  
+> **Framework**: Cloudflare Workers + Durable Objects  
+> **MCP Version**: Latest (@modelcontextprotocol/sdk ^1.12.1)
+
+Cogn is a production-ready Model Context Protocol (MCP) server that consolidates 21 powerful tools across 7 categories, all based on researched and real MCP server implementations. Each tool provides specialized AI-powered capabilities for development, reasoning, system management, and knowledge work.
 
 ## ✨ Features
 
-### 🧠 **20 Specialized AI Tools** across 7 categories:
+### 🧠 **21 Specialized AI Tools** across 7 categories:
 
-- **📁 File System (3 tools)**: Intelligent file reading, semantic code search, AI-assisted editing
-- **🔍 Code Analysis (3 tools)**: Architecture analysis, pattern detection, dependency management  
-- **🐙 GitHub Integration (3 tools)**: Repository analysis, issue management, PR reviews
-- **🧠 AI Reasoning (3 tools)**: Sequential reasoning, strategic analysis, beam search
-- **💾 Memory Management (3 tools)**: Knowledge graph, semantic memory, contextual memory
-- **🖥️ System Integration (2 tools)**: Desktop commands, process management
-- **🔒 Zero Trust Security (3 tools)**: Security analysis, policy management, event monitoring
+- **🧠 Reasoning & Intelligence (4 tools)**: Multi-strategy reasoning, strategic analysis, pattern detection, decision engine
+- **📂 Smart File System (4 tools)**: Intelligent file ops, codebase navigation, project analysis, content transformation
+- **🔗 External Integration (3 tools)**: GitHub orchestration, web intelligence, system command execution
+- **💾 Memory & Knowledge (4 tools)**: Persistent memory, dynamic context, knowledge graphs, insight aggregation
+- **⚡ Performance & Operations (2 tools)**: Performance optimization, workflow automation
+- **🔒 Security (1 tool)**: Comprehensive security analysis and compliance
+- **🎨 Development Experience (3 tools)**: AI development assistance, script generation, functional architecture
 
 ### 🎯 **Key Capabilities**
 
@@ -86,14 +90,13 @@ Add to your Claude Desktop config:
 
 ### **Available Commands**
 ```bash
-npm run dev          # Start development server
+npm run dev          # Start development server (wrangler dev)
 npm run deploy       # Deploy to production
 npm run db:migrate   # Apply database schema
 npm run db:reset     # Reset and recreate database
 npm run logs         # View real-time logs
-npm run test         # Run tests
-npm run lint         # Lint code
-npm run type-check   # TypeScript type checking
+node test-cogn-tools.js        # Test all 21 tools with real data
+node test-individual-tool.js   # Test individual tools interactively
 ```
 
 ### **Local Development**
@@ -106,39 +109,81 @@ npm run dev
 
 ## 📊 Tool Categories
 
-### 📁 **File System Tools**
-- `intelligent_file_reader` - Read and analyze files with AI insights
-- `semantic_code_search` - Natural language code search with context
-- `ai_file_editor` - AI-assisted file editing with safety checks
+### 🧠 **Reasoning & Intelligence (4 tools)**
+- `unified_reasoner` - Multi-strategy AI reasoning (Beam Search, MCTS)
+- `strategic_intelligence` - Domain-specific strategic analysis
+- `pattern_intelligence` - Code pattern detection and optimization
+- `decision_engine` - Multi-criteria decision making
 
-### 🔍 **Code Analysis Tools** 
-- `architectural_analysis` - Project architecture analysis and recommendations
-- `pattern_detection` - Design patterns and anti-patterns detection
-- `dependency_analyzer` - Dependency analysis with security scanning
+### 📂 **Smart File System (4 tools)**
+- `intelligent_file_ops` - AI-enhanced file operations
+- `codebase_navigator` - Architectural codebase exploration
+- `project_analyzer` - Comprehensive project health analysis
+- `content_transformer` - Smart content refactoring and optimization
 
-### 🐙 **GitHub Integration Tools**
-- `repository_analyzer` - Comprehensive repository analysis with trends
-- `intelligent_issue_manager` - AI-powered issue categorization and solutions
-- `ai_pr_reviewer` - Automated pull request review and suggestions
+### 🔗 **External Integration (3 tools)**
+- `github_orchestrator` - GitHub repository analysis and management
+- `web_intelligence` - Web content analysis and extraction
+- `system_commander` - Safe system command execution
 
-### 🧠 **AI Reasoning Tools**
-- `sequential_reasoning` - Advanced step-by-step problem solving
-- `strategic_analyzer` - High-level strategic analysis and planning
-- `beam_search_reasoning` - Explore multiple solution paths simultaneously
+### 💾 **Memory & Knowledge (4 tools)**
+- `persistent_memory_engine` - Cross-session memory with vector embeddings
+- `dynamic_context_manager` - Intelligent context management
+- `knowledge_graph_navigator` - Graph-based knowledge representation
+- `insight_aggregator` - Pattern discovery and recommendation synthesis
 
-### 💾 **Memory Management Tools**
-- `knowledge_graph_manager` - Persistent knowledge graph with relationships
-- `semantic_memory` - Semantic memory storage and retrieval
-- `contextual_memory` - Context-aware memory across sessions
+### ⚡ **Performance & Operations (2 tools)**
+- `performance_optimizer` - System and application optimization
+- `workflow_automator` - Intelligent workflow orchestration
 
-### 🖥️ **System Integration Tools**
-- `desktop_commander` - Execute system commands with AI safety analysis
-- `process_manager` - System process management with AI insights
+### 🔒 **Security (1 tool)**
+- `security_guardian` - Comprehensive security analysis and compliance
 
-### 🔒 **Zero Trust Security Tools**
-- `zero_trust_analyzer` - Analyze and improve Zero Trust posture
-- `access_policy_manager` - Manage Cloudflare Access policies
-- `security_monitor` - Monitor security events with threat detection
+### 🎨 **Development Experience (3 tools)**
+- `dev_assistant` - AI-powered development assistance
+- `genai_scripter` - AI script and template generation
+- `functional_architect` - Functional programming design patterns
+
+---
+
+## 🧪 **Testing Suite**
+
+### **Comprehensive Testing**
+Test all 21 tools with real data:
+
+```bash
+node test-cogn-tools.js
+```
+
+### **Individual Tool Testing**
+Test specific tools interactively:
+
+```bash
+# Interactive mode
+node test-individual-tool.js
+
+# Specific tool with default parameters
+node test-individual-tool.js unified_reasoner
+
+# Custom parameters
+node test-individual-tool.js dev_assistant '{"action":"generate_code","language":"typescript","requirements":"Create a user service class"}'
+```
+
+### **Health Check**
+```bash
+curl http://localhost:8787/health
+```
+
+### **Tool Sources**
+Each tool is based on real MCP implementations:
+
+- **Reasoning**: [Jacck/mcp-reasoner](https://github.com/Jacck/mcp-reasoner)
+- **System Integration**: [wonderwhy-er/DesktopCommanderMCP](https://github.com/wonderwhy-er/DesktopCommanderMCP)
+- **Official Tools**: [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
+- **Memory Services**: [doobidoo/mcp-memory-service](https://github.com/doobidoo/mcp-memory-service)
+- **Knowledge Graphs**: [shaneholloman/mcp-knowledge-graph](https://github.com/shaneholloman/mcp-knowledge-graph)
+
+See [COGN-FERRAMENTAS-MAPEAMENTO.md](./COGN-FERRAMENTAS-MAPEAMENTO.md) for complete mapping.
 
 ## 🔧 Configuration
 
