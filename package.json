@@ -1,0 +1,59 @@
+{
+  "name": "cogn-unified-mcp-server",
+  "version": "1.0.0",
+  "description": "Cogn - Advanced AI-powered MCP server with 20 specialized tools for development assistance",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:staging": "wrangler deploy --env staging",
+    "start": "wrangler dev",
+    "test": "wrangler dev --test",
+    "db:migrate": "wrangler d1 execute cogn-mcp-db --file=schema.sql",
+    "db:reset": "wrangler d1 execute cogn-mcp-db --command=\"DROP TABLE IF EXISTS file_knowledge; DROP TABLE IF EXISTS file_operations; DROP TABLE IF EXISTS command_executions; DROP TABLE IF EXISTS repository_analyses; DROP TABLE IF EXISTS strategic_insights; DROP TABLE IF EXISTS user_sessions; DROP TABLE IF EXISTS tool_usage;\" && npm run db:migrate",
+    "logs": "wrangler tail",
+    "lint": "eslint src/ --ext .ts,.js",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,js,json}\"",
+    "setup": "bash mcp-setup-script.sh"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai",
+    "claude",
+    "development-assistant",
+    "cloudflare-workers",
+    "github-integration",
+    "zero-trust",
+    "semantic-search",
+    "reasoning-engine"
+  ],
+  "author": "Gustavo Mendes e Silva",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "agents": "^0.0.94",
+    "zod": "^3.25.51"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0",
+    "wrangler": "^3.78.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/myselfgus/cogn_mcp_remote.git"
+  },
+  "bugs": {
+    "url": "https://github.com/myselfgus/cogn_mcp_remote/issues"
+  },
+  "homepage": "https://github.com/myselfgus/cogn_mcp_remote#readme"
+}

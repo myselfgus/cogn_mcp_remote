@@ -1,0 +1,84 @@
+# 🚀 COGN UNIFIED MCP SERVER - GITIGNORE
+
+# ===== 🔒 SECRETS & ENVIRONMENT =====
+.dev.vars
+.env*
+!.env.example
+*.pem
+*.key
+*.cert
+
+# ===== 📦 DEPENDENCIES =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# ===== 🏗️ BUILD OUTPUTS =====
+dist/
+build/
+.wrangler/
+.cache/
+.turbo/
+
+# ===== 🧪 TESTING =====
+coverage/
+.nyc_output/
+*.lcov
+
+# ===== 🛠️ IDE & EDITORS =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ===== 📊 LOGS =====
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== 🔧 SYSTEM FILES =====
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ===== ☁️ CLOUDFLARE =====
+.wrangler/
+wrangler.toml.bak
+
+# ===== 📱 TEMPORARY FILES =====
+tmp/
+temp/
+.tmp/
+.temp/
+
+# ===== 🎯 PROJECT SPECIFIC =====
+# Generated configuration files
+claudflared-linux-amd64.deb
+tunnel-config.yml
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated documentation
+docs/generated/
+
+# Backup files
+*.backup
+*.bak
+
+# Local development certificates
+local-certs/
