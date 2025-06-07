@@ -1632,7 +1632,7 @@ export default {
 					<li><code>/mcp</code> - Alternative MCP endpoint</li>
 					<li><code>/health</code> - Health check</li>
 				</ul>
-				<p><strong>Status:</strong> 8 of 21 tools implemented (remaining tools in progress)</p>
+				<p><strong>Status:</strong> 21 of 21 tools implemented and ready! ✅</p>
 			`, {
 				headers: { "Content-Type": "text/html" }
 			});

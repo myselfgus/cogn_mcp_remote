@@ -12,5 +12,34 @@ tag = "v1"
 class_name = "CognMCP"
 name = "MCP_OBJECT"
 
+# KV Namespaces for OAuth and storage
+[[kv_namespaces]]
+binding = "OAUTH_KV"
+id = "4f897d4f75b3462886de22890a494c40"
+
+[[kv_namespaces]]
+binding = "KV_STORAGE"
+id = "1dea7a75bffb4b51a154ddc6ce78758c"
+
+# D1 Database for persistent storage
+[[d1_databases]]
+binding = "D1_DATABASE"
+database_name = "dynamic-memory-knowledge-graph"
+database_id = "56ae69b6-9dad-48e7-bc17-e0e05ab43790"
+
+# R2 Bucket for file storage
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "workspace-storage"
+
+# AI binding for Cloudflare AI
+[ai]
+binding = "AI"
+
+# Note: Vectorize requires additional permissions
+# [[vectorize]]
+# binding = "VECTORIZE"
+# index_name = "cogn-mcp-vectors"
+
 [observability]
 enabled = true
